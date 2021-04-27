@@ -1237,8 +1237,10 @@ Map.prototype.addPolygon = function(polygonOptions, callback) {
   });
 
   self.exec.call(self, function() {
-    polygon._privateInitialize();
-    delete polygon._privateInitialize;
+    if(typeof polygon !== 'undefined') {
+      polygon._privateInitialize();
+      delete polygon._privateInitialize;
+    }
 
     if (typeof callback === 'function') {
       callback.call(self, polygon);
