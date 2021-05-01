@@ -149,9 +149,9 @@ function pluginInit() {
       _org_addEventListener.apply(this, args);
       return;
     }
-    if (!anotherBackbuttonHandler) {
+    //if (!anotherBackbuttonHandler) {
       anotherBackbuttonHandler = callback;
-    }
+    //}
   };
   document.removeEventListener = function (eventName, callback) {
     var args = Array.prototype.slice.call(arguments, 0);
